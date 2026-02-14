@@ -17,25 +17,25 @@ public class User {
 
         // Save AadharCard
         AadharCard aadhar = new AadharCard();
-        aadhar.setAadharId(101);
+        aadhar.setAadharId(102);
         aadhar.setAadharNumber("1234-5678-9999");
         aadhar.setAddress("Haryana");
-        aadhar.setIssueDate("2019");
+        aadhar.setIssueDate("2018");
         em.persist(aadhar);
 
         // Save HostelRoom
         HostelRoom room = new HostelRoom();
-        room.setRoomId(201);
-        room.setRoomNumber("B-522");
+        room.setRoomId(202);
+        room.setRoomNumber("B-611");
         room.setBlockName("B");
-        room.setFloorNumber(5);
+        room.setFloorNumber(6);
         em.persist(room);
 
         // Create Student and associate
         Student student = new Student();
-        student.setStudentId(1);
-        student.setName("Yash");
-        student.setEmail("yash@gmail.com");
+        student.setStudentId(2);
+        student.setName("Aryan");
+        student.setEmail("aryan@gmail.com");
         student.setBranch("CSE");
         student.setAadhar(aadhar);
         student.setHostelRoom(room);
@@ -44,7 +44,7 @@ public class User {
         tx.commit();
 
         // Fetch Student
-        Student s = em.find(Student.class, 1);
+        Student s = em.find(Student.class, 2);
 
         s.getStudentId();
         s.getName();
@@ -67,7 +67,7 @@ public class User {
         System.out.println(a.getAadharNumber());
         System.out.println(h.getRoomNumber());
 
-        // Delete Student ONLY
+//         Delete Student ONLY
         Student s1 = em.find(Student.class, student.getStudentId());
 
         tx.begin();

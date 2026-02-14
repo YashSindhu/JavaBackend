@@ -20,17 +20,17 @@ public class UserServiceTest {
 		assertEquals("regular user",actual);
 	}
 	
-//	@Test
-//	public void testDoubleAddition() {
-//		//Step 1: createFakeObject
-//		Calculator calmock=mock(Calculator.class);
-//		//Step 2: what mock object should return
-//		when(calmock.add(5, 5)).thenReturn(20);
-//		//Step 3: inject the mock ref
-//		MathService service = new MathService(calmock);
-//		int res = service.doubleAddition(5, 5);
-//		
-//		assertEquals(20,res);
-//		
-//	}
+	@Test
+	public void testDoubleAddition() {
+		//Step 1: createFakeObject
+		Calculator calmock=mock(Calculator.class);
+		//Step 2: what mock object should return
+		when(calmock.add(5, 5)).thenReturn(20);
+		//Step 3: inject the mock ref
+		MathService service = new MathService(calmock);
+		int res = service.doubleAddition(5, 5);
+		
+		assertEquals(20,res);
+		
+	}
 }
