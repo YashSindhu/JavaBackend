@@ -55,7 +55,7 @@ public class HospitalTesting {
 
         et.begin();
 
-        // 🔥 delete join table FIRST
+        // delete join table FIRST
         em.createNativeQuery("DELETE FROM doctor_appointment").executeUpdate();
 
         em.createQuery("DELETE FROM Appointment").executeUpdate();
@@ -111,7 +111,7 @@ public class HospitalTesting {
     	p.setAge(25);
     	p.setContact("8888888888");
 
-    	patientDAO.savePatient(p);   // 🔥 SAVE PATIENT FIRST
+    	patientDAO.savePatient(p);   // SAVE PATIENT FIRST
 
     	Appointment a = new Appointment();
     	a.setId(10);
@@ -146,7 +146,7 @@ public class HospitalTesting {
         a2.setVisDate("2026-02-17");
         a2.setFee(1500);
 
-        // 🔥 SAVE APPOINTMENTS FIRST
+        // SAVE APPOINTMENTS FIRST
         appointmentDAO.saveAppointment(a1);
         appointmentDAO.saveAppointment(a2);
 
@@ -156,7 +156,7 @@ public class HospitalTesting {
 
         doctor.setAppointment(list);
 
-        // 🔥 NOW SAVE DOCTOR
+        // NOW SAVE DOCTOR
         doctorDAO.saveDoctor(doctor);
 
         Doctor fetched = doctorDAO.findDoctor(1);
