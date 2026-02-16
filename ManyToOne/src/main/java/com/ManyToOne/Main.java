@@ -16,14 +16,14 @@ public class Main {
 
         // Create Department
         Department dept = new Department();
-        dept.setId(1);
+//        dept.setId(1);
         dept.setName("IT");
         dept.setManagerName("Sharma");
         dept.setNoOfEmployee(3);
 
         // Create Employee 1
         Employee e1 = new Employee();
-        e1.setId(101);
+//        e1.setId(101);
         e1.setName("Yash");
         e1.setSal(50000);
         e1.setDesignation("Developer");
@@ -31,7 +31,7 @@ public class Main {
 
         // Create Employee 2
         Employee e2 = new Employee();
-        e2.setId(102);
+//        e2.setId(102);
         e2.setName("Rohit");
         e2.setSal(45000);
         e2.setDesignation("Tester");
@@ -39,7 +39,7 @@ public class Main {
 
         // Create Employee 3
         Employee e3 = new Employee();
-        e3.setId(103);
+//        e3.setId(103);
         e3.setName("Virat");
         e3.setSal(55000);
         e3.setDesignation("Manager");

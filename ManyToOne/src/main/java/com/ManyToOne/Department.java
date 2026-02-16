@@ -1,7 +1,10 @@
 package com.ManyToOne;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -9,6 +12,8 @@ import javax.persistence.Table;
 public class Department {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "number_sequence")
+    @SequenceGenerator(name = "number_squence",sequenceName = "number_sequence", initialValue = 100,allocationSize = 1)
     private int id;
 
     private String name;
