@@ -3,6 +3,7 @@ package com.OneToMany;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -16,7 +17,7 @@ public class College {
 	private String location;
 	private String pincode;
 	
-	@OneToMany
+	@OneToMany(fetch = FetchType.EAGER)
 	private List<Student> student;
 	
 	

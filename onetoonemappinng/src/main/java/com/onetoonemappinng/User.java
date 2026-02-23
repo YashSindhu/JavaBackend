@@ -10,7 +10,16 @@ public class User {
 	public static void main(String[] args) {
 //		insertCarAndEngine();
 //		findCarById();		
-		deleteEngineById(200);
+//		deleteEngineById(200);
+		 EntityManagerFactory emf = Persistence.createEntityManagerFactory("postgres");
+	     EntityManager em = emf.createEntityManager();
+	     EntityTransaction et = em.getTransaction();
+	     
+	     Car c = em.find(Car.class, 1);
+	     System.out.println("================");
+//	     em.clear(); // => this clears cache
+	     Car c1 = em.find(Car.class, 1);
+	     
 
 		
 	}
