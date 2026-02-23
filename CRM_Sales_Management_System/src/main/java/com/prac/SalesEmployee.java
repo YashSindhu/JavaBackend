@@ -1,30 +1,57 @@
 package com.prac;
 
-import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class SalesEmployee {
 
     @Id
-    private long empId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     private String name;
     private String department;
 
     @OneToMany(mappedBy = "employee")
-    private List<Lead> leads;
+    private List<Lead> leads = new ArrayList<>();
 
-    // Getters & Setters
-    public long getEmpId() { return empId; }
-    public void setEmpId(long empId) { this.empId = empId; }
+	public Long getId() {
+		return id;
+	}
 
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public String getDepartment() { return department; }
-    public void setDepartment(String department) { this.department = department; }
+	public String getName() {
+		return name;
+	}
 
-    public List<Lead> getLeads() { return leads; }
-    public void setLeads(List<Lead> leads) { this.leads = leads; }
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(String department) {
+		this.department = department;
+	}
+
+	public List<Lead> getLeads() {
+		return leads;
+	}
+
+	public void setLeads(List<Lead> leads) {
+		this.leads = leads;
+	}
+    
 }

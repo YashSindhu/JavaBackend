@@ -1,25 +1,54 @@
 package com.prac;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class SupportTicket {
 
     @Id
-    private long ticketId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    private String issueDescription;
+    private String issue;
+    private String status;
 
     @OneToOne
     private Order order;
 
-    // Getters & Setters
-    public long getTicketId() { return ticketId; }
-    public void setTicketId(long ticketId) { this.ticketId = ticketId; }
+	public Long getId() {
+		return id;
+	}
 
-    public String getIssueDescription() { return issueDescription; }
-    public void setIssueDescription(String issueDescription) { this.issueDescription = issueDescription; }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public Order getOrder() { return order; }
-    public void setOrder(Order order) { this.order = order; }
+	public String getIssue() {
+		return issue;
+	}
+
+	public void setIssue(String issue) {
+		this.issue = issue;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public Order getOrder() {
+		return order;
+	}
+
+	public void setOrder(Order order) {
+		this.order = order;
+	}
+    
 }
