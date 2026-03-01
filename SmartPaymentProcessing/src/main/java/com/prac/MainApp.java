@@ -1,5 +1,6 @@
 package com.prac;
 
+
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class MainApp {
@@ -12,6 +13,6 @@ public class MainApp {
         PaymentProcessor processor = context.getBean(PaymentProcessor.class);
         processor.pay(5000);
 
-        context.close();
+//        context.close();
     }
 }
