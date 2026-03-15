@@ -34,5 +34,7 @@ public class DbDetailsUserService implements UserDetailsService {
 		
 		return new User(account.getUsername(),account.getPassword(), authroties);  //This will accept username and password in the form of String but not the role, It accepts the role in the form of Collection which is SimpleGrantedAuthority type.
 	}
+	
+	
 
 }

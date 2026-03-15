@@ -1,5 +1,6 @@
 package com.securityPractice.SpringSecurityDBConnection.Service;
 
+import org.springframework.security.access.prepost.PostAuthorize;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -76,9 +77,15 @@ public class AccountService {
 		return response;
 	}
 	
-	
+	@PostAuthorize("hasRole('ADMIN') or returnObject.username == authentication.name")
 	public AccountResponseDTO getById(long id) {
 		Account a = jpa.findById(id).orElseThrow(()->new RuntimeException("Id not found"));
 		return toResponse(a);
 	}
+	
+
+	
+	
+	
+	
 }
