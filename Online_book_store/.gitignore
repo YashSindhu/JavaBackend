@@ -1,0 +1,47 @@
+# ===== Eclipse =====
+.metadata/
+.settings/
+.classpath
+.project
+*.launch
+.factorypath
+RemoteSystemsTempFiles/
+
+# ===== Maven =====
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# ===== Spring Boot =====
+*.log
+log/
+logs/
+
+# ===== Java =====
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+hs_err_pid*
+replay_pid*
+
+# ===== H2 Database =====
+*.db
+*.mv.db
+*.trace.db
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===== IntelliJ (in case) =====
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# ===== VS Code (in case) =====
+.vscode/
